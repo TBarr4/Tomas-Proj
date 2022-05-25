@@ -1,0 +1,13 @@
+{
+    "env":{
+    "baseUrl": "https://qa-test.ticto.io/", 
+     "name": "Tomás Barra",
+     "user": "tomas.barra@ticto.com.br",
+     "pass": "mudar123",
+     "nameErrado": "12346erro",
+     "userErrado": "654321erro",
+     "passErrado": "!@#$%"
+
+     
+}
+}
