@@ -1,6 +1,7 @@
 {
     "projectId": "f4a9v2",
-    "baseUrl": "https://qa-test.ticto.io/"
-    
-
+    "baseUrl": "https://qa-test.ticto.io/",
+    "env": {
+        "user": "Tomas-Proj"
+    }    
 }
