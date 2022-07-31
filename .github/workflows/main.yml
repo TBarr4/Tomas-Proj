@@ -16,5 +16,3 @@ jobs:
           record: true
         env:
           cypress run --record --key <978bfe61-2a27-4b6b-b5d9-89dfed3b505d>
-        
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
