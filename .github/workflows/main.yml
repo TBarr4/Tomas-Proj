@@ -1,12 +1,7 @@
 name: Tomas-Proj
 #Gatilhos
 #Gatilhos programados -> ou acionados por eventos
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
+on: [push]
 jobs:
   build:
   #Maquina ou abimiente
