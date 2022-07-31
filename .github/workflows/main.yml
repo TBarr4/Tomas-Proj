@@ -13,11 +13,9 @@ jobs:
       uses: cypress-io/github-action@v2
 
       with:
+        command: npx cypress run --record --key 6da2397c-604f-497b-a44c-3b6ce125e08c
         start: npm start
         record: true
         
-      env:
-        CYPRESS_RECORD_KEY: ${{ secrets.RECORD_KEY }}
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  
+
 
