@@ -6,7 +6,7 @@
     "cypress": "^9.7.0"
   },
   "scripts": {
-    "test": "npx cypress run",     
+    "cy:run": "npx cypress run",     
     "cypress:chrome": "cypress run -b chrome",     
     "cypress:open": "cypress open"
   },
