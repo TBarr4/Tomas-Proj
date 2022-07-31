@@ -1,12 +1,12 @@
 <h1 align="center">:file_cabinet: Tomas-Proj:</h1>
 
 ## :memo: Descrição
-Este projeto tem o intuito de demonstrar as minhas habilidades em cypress adquiridas até o momento, afim de vislumbrar evolução futura.
+Este projeto tem o intuito de demonstrar as minhas habilidades em cypress adquiridas até o momento, afim de vislumbrar evolução futura
 
 ## :books: Funcionalidades
-* <b>Funcionalidade 1</b>: Dentro deste projeto será encontrado um script de teste que contempla os cenários descritos pelo bdd que também está apresentado na pasta readme, assim como o cumprimento das etapas pedidas.
+* <b>Funcionalidade</b>: Dentro deste projeto será encontrado um script de teste que contempla os cenários descritos pelo bdd que também está apresentado na pasta readme, assim como o cumprimento das etapas pedidas
 
-## :wrench: Tecnologias utilizadas
+## :wrench: Tecnologia utilizada
 * Cypress;
 
 ## :rocket: Rodando o projeto
