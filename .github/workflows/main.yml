@@ -17,11 +17,9 @@ jobs:
          record: true
          parallel: true
          config-file: cypress.json
+         spec: cypress/integration/testecypress.js 
          
       - run: npm install   
       
       - run: npm run cy:run
         continue-on-error: true 
-     
-        env:
-         CYPRESS_RECORD_KEY: "978bfe61-2a27-4b6b-b5d9-89dfed3b505d"
