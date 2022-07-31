@@ -1,26 +1,25 @@
-
-name: testeCypress
-
+name: Tomas-Proj
 on:
-  workflow_dispatch:
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 jobs:
-     name: Cypress run
+  build:
     runs-on: ubuntu-latest
-    container: cypress/browsers:node14.16.0-chrome90-ff88
     steps:
-      - uses: actions/checkout@v2
-      - name: Cypress run 
-        uses: cypress-io/github-action@v2
-        
-                with:
-          record: true
-        env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
- 
-
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: cypress-io/github-action@v4
+        with:
+         node-version: 14.x  
+         record: true
+         parallel: true
+         config-file: cypress.json
+         spec: cypress/integration/testecypress.js 
+         
+      - run: npm install   
+      
+      - run: npm run cy:run
+        continue-on-error: true 
