@@ -1,0 +1,38 @@
+name: Execução Tomas-Proj
+
+on:
+  workflow_dispatch:
+    inputs:
+      amb:
+    description: 'Selecionar algum destes ambientes: dev / hlg / prd'
+        required: false
+        default: 'QA'
+      browser:
+        description: 'Selecionar algum destes browsers: chrome / electron'
+        required: false
+        default: 'electron'
+      tag:
+        description: 'Selecionar alguma tag, por exemplo: @regressivo / @smoke / @login'
+        required: false
+        default: '@testecypress'
+
+    
+env:
+  DEFAULT_AMB: "QA"
+  DEFAULT_BROWSER: "electron"
+  DEFAULT_TAG: "@testecypress"
+electronelectron
+jname: End-to-end tests
+on: [push]
+jobs:
+  cypress-run:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
+        with: 
+          command: npx cypress run --config-file config/${{github.event.inputs.amb || env.DEFAULT_AMB}}.json --browser ${{github.event.inputs.browser || env.DEFAULT_BROWSER}} --env grepTags=${{github.event.inputs.tag || env.DEFAULT_TAG}}
