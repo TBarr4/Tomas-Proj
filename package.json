@@ -6,7 +6,9 @@
     "cypress": "^9.7.0"
   },
   "scripts": {
-    "cy:run": "npx cypress run"
+    "cypress": "cypress run",     
+    "cypress:chrome": "cypress run -b chrome",     
+    "cypress:open": "cypress open"
   },
   "keywords": [],
   "author": "",
