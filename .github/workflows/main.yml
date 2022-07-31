@@ -22,5 +22,5 @@ jobs:
       - run: npm run cy:run
         continue-on-error: true 
      
-        env:
-          CYPRESS_RECORD_KEY: cypress run --record --key <978bfe61-2a27-4b6b-b5d9-89dfed3b505d>
+        env: 
+        cypress run --record --key <978bfe61-2a27-4b6b-b5d9-89dfed3b505d>
