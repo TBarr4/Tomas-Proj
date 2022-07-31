@@ -25,8 +25,8 @@ Cypress.Commands.add('preencherDadosCorretos', () => {
     cy.get('div.show:nth-child(2) > a:nth-child(1)').click({force: true})
     cy.get('.modal-body').should('be.visible')
     cy.get('.form-group.py-1').should('be.visible')
-    cy.get('.modal-body').parent().find('input[id*=e_name]').last().filter('.form-control').should('have.value','Tomás Barra')
-    cy.get('.modal-body').parent().find('input[id*=e_email]').last().filter('.form-control').should('have.value','tomas.barra@ticto.com.br')
+    cy.get('.modal-body').parent().find('input[id*=e_name]').last().filter('.form-control').should('have.value',Cypress.env('name'))
+    cy.get('.modal-body').parent().find('input[id*=e_email]').last().filter('.form-control').should('have.value', Cypress.env('user'))
 });
 
 Cypress.Commands.add('VerificarPagina', () => {
@@ -40,16 +40,16 @@ Cypress.Commands.add('VerificarPagina', () => {
 Cypress.Commands.add('editarCampos', () => {
     cy.get('td').nextAll().last().find('button').click({force: true})
     cy.get('div.show:nth-child(2) > a:nth-child(1)').click({force: true})
-    cy.get('.modal-body').parent().find('input[id*=e_name]').last().filter('.form-control').should('have.value','Tomás Barra').clear().type('teste')    
+    cy.get('.modal-body').parent().find('input[id*=e_name]').last().filter('.form-control').should('have.value',Cypress.env('name')).clear().type(Cypress.env('ediçãoErrado'))    
     cy.get('.modal-footer').find('.btn-primary').last().click({force: true})
-    cy.get('.modal-body').parent().find('input[id*=e_email]').last().filter('.form-control').should('have.value','tomas.barra@ticto.com.br').clear()
+    cy.get('.modal-body').parent().find('input[id*=e_email]').last().filter('.form-control').should('have.value',Cypress.env('user')).clear()
     cy.get('.modal-footer').find('.btn-primary').last().click({force: true})
 });
 Cypress.Commands.add('salvarCampos', () => {
     cy.get('td').nextAll().last().find('button').click({force: true})
     cy.get('div.show:nth-child(2) > a:nth-child(1)').click({force: true})
-    cy.get('.modal-body').parent().find('input[id*=e_name]').last().filter('.form-control').should('have.value','Tomás Barra').clear().type('Barra Tomás')
-    cy.get('.modal-body').parent().find('input[id*=e_email]').last().filter('.form-control').should('have.value','tomas.barra@ticto.com.br').clear().type('barra.tomas@ticto.com.br')
+    cy.get('.modal-body').parent().find('input[id*=e_name]').last().filter('.form-control').should('have.value',Cypress.env('name')).clear().type(Cypress.env('nameEditado'))
+    cy.get('.modal-body').parent().find('input[id*=e_email]').last().filter('.form-control').should('have.value',Cypress.env('user')).clear().type(Cypress.env('userEditado'))
     cy.get('.modal-footer').find('.btn-primary').last().click({force: true})
     cy.get('.alert').should('be.visible').contains('Usuário salvo com sucesso.')   
 });

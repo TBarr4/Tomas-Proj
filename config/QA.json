@@ -6,7 +6,11 @@
      "pass": "mudar123",
      "nameErrado": "12346erro",
      "userErrado": "654321erro",
-     "passErrado": "!@#$%"
+     "passErrado": "!@#$%",
+     "nameEditado": "Barra Tomás",
+     "userEditado": "barra.tomas@ticto.com.br",
+     "ediçãoErrado": "teste"
+
 
      
 }
