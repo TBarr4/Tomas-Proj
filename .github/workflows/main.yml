@@ -1,29 +1,22 @@
 name: Tomas-Proj
-#Gatilhos
-#Gatilhos programados -> ou acionados por eventos
+
 on: [push]
 jobs:
-  cypress-on:
-    runs-on: ubuntu-latest
+  test:
+   runs-on: ubuntu-20.04
 
-    steps:
+   steps:
     - name: Checkout
       uses: actions/checkout@v2
-    #setup versao do node
-    - name: Use Node.js
-      uses: actions/setup-node@v2
-      
-    - name: Cypress run
-      uses: cypress-io/github-action@v4
+
+    - name: Run tests
+      uses: cypress-io/github-action@v2
+
       with:
-        node-version: 14.x
+        start: npm start
         record: true
         
-    - run: npm install
-    
-    - run: npm run cy:run
-      continue-on-error: true
-      
       env:
-       CYPRESS_RECORD_KEY: ${{ secrets.RECORD_KEY }}
-       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        CYPRESS_RECORD_KEY: ${{ secrets.RECORD_KEY }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  
