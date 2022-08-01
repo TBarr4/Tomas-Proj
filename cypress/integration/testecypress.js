@@ -38,6 +38,6 @@ describe('Testes da Página e validações', () => {
 
     it('Exclusão', () => {
     cy.excluirCadastro();
-// Aqui realizei a exclusão e checagem de exclusão do cadastr
+// Aqui realizei a exclusão e checagem de exclusão do cadastro
 }); 
 });
