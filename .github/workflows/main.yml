@@ -14,6 +14,6 @@ jobs:
 
       with:
         command: npx cypress run --record --key ${{ secrets.CYPRESS_RECORD_KEY }}
-        start: npm start
+ 
         record: true
         parallel: true
